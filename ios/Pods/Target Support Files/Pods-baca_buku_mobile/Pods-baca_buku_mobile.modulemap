@@ -1,0 +1,6 @@
+module Pods_baca_buku_mobile {
+  umbrella header "Pods-baca_buku_mobile-umbrella.h"
+
+  export *
+  module * { export * }
+}
