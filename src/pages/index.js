@@ -1,3 +1,7 @@
 import Home from './Home';
+import SplashScreen from './SplashSreen';
 
-export { Home };
+export { 
+    Home,
+    SplashScreen
+ };

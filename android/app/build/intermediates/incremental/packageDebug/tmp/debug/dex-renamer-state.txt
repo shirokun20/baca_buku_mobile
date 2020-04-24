@@ -1,4 +1,4 @@
-#Thu Apr 23 18:22:09 WIB 2020
-base.0=/home/fikrisuheri/Documents/Pemrograman/React Native/GITHUB/baca_buku_mobile/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Fri Apr 24 21:55:33 WIB 2020
+base.0=/home/kuro/Documents/baca_buku_mobile/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
