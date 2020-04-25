@@ -4,11 +4,14 @@ import {
     View,
     StatusBar,
     StyleSheet,
-    ActivityIndicator
+    ActivityIndicator,
+    ImageBackground,
+    Image
 } from 'react-native';
 
 import { colorStatusBar, colorWhite } from '../../assets/colors';
 import { ssStyle } from '../../assets/splashscreen.style';
+import { logo, backgroundSS } from '../../assets/img';
 
 class index extends Component {
     render() {
@@ -21,9 +24,7 @@ class index extends Component {
 
         const gambarAplikasi = (
             <View style={ssStyle.viewParentLogo}>
-                <View style={ssStyle.viewChildLogo}>
-
-                </View>
+                <Image source={logo} />
                 <View>
                     <Text style={ssStyle.textLogo}>Buku Ku</Text>
                     <Text style={ssStyle.textMoto}>Tempat baca buku tentang {'\n'}Pemrograman</Text>
@@ -40,8 +41,13 @@ class index extends Component {
             </View>
         )
 
+        const backgroundImage = (
+            <Image  source={backgroundSS} style={ssStyle.imageBackground} />
+        )
+
         return (
             <View style={ssStyle.container}>
+                {backgroundImage}
                 {statusBar}
                 {gambarAplikasi}
                 {viewBottom}

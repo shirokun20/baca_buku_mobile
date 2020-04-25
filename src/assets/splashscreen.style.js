@@ -46,6 +46,10 @@ const ssStyle = StyleSheet.create({
     textVersion: {
         color: colorWhite,
         fontSize: 15,
+    },
+    imageBackground: {
+        position: 'absolute',
+        alignSelf: 'center'
     }
 });
 
