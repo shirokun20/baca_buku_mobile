@@ -11,7 +11,7 @@ import {
 
 import { colorStatusBar, colorWhite } from '../../assets/colors';
 import { ssStyle } from '../../assets/splashscreen.style';
-import { logo, backgroundSS } from '../../assets/img';
+import { logo, backgroundSS, layer } from '../../assets/img';
 
 class index extends Component {
     render() {
@@ -42,12 +42,20 @@ class index extends Component {
         )
 
         const backgroundImage = (
-            <Image  source={backgroundSS} style={ssStyle.imageBackground} />
+            <Image source={backgroundSS} style={ssStyle.imageBackground} />
+        )
+
+        const imageLayer = (
+            <>
+                <Image source={layer} style={ssStyle.layerOne} />
+                <Image source={layer} style={ssStyle.layerTwo} />
+            </>
         )
 
         return (
             <View style={ssStyle.container}>
                 {backgroundImage}
+                {imageLayer}
                 {statusBar}
                 {gambarAplikasi}
                 {viewBottom}

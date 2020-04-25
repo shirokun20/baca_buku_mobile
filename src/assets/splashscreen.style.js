@@ -50,6 +50,25 @@ const ssStyle = StyleSheet.create({
     imageBackground: {
         position: 'absolute',
         alignSelf: 'center'
+    },
+    layerOne: {
+        position: 'absolute',
+        alignSelf: 'flex-end',
+        height: 200,
+        width: 200,
+        opacity: 0.5,
+        top: -60,
+        right: -(width/4),    
+    },
+    layerTwo: {
+        position: 'absolute',
+        alignSelf: 'flex-start',
+        height: 200,
+        width: 200,
+        opacity: 0.5,
+        bottom: -60,
+        left: -(width/4),    
+
     }
 });
 
