@@ -3,13 +3,11 @@ import {
     Text,
     View,
     StatusBar,
-    StyleSheet,
     ActivityIndicator,
-    ImageBackground,
     Image
 } from 'react-native';
 
-import { colorStatusBar, colorWhite } from '../../assets/colors';
+import { colorWhite } from '../../assets/colors';
 import { ssStyle } from '../../assets/splashscreen.style';
 import { logo, backgroundSS, layer } from '../../assets/img';
 
@@ -24,7 +22,7 @@ class index extends Component {
 
         const statusBar = (
             <>
-                <StatusBar barStyle="light-content" backgroundColor={colorStatusBar} />
+                <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
             </>
         )
 

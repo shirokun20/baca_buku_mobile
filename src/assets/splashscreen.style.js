@@ -49,7 +49,9 @@ const ssStyle = StyleSheet.create({
     },
     imageBackground: {
         position: 'absolute',
-        alignSelf: 'center'
+        alignSelf: 'center',
+        height: height,
+        width: width
     },
     layerOne: {
         position: 'absolute',
