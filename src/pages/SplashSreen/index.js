@@ -10,6 +10,7 @@ import {
 import { colorWhite } from '../../assets/colors';
 import { ssStyle } from '../../assets/splashscreen.style';
 import { logo, backgroundSS, layer } from '../../assets/img';
+import { AppName, MottoSS, Versi } from '../../assets/string_value';
 
 class index extends Component {
     render() {
@@ -24,8 +25,8 @@ class index extends Component {
             <View style={ssStyle.viewParentLogo}>
                 <Image source={logo} />
                 <View>
-                    <Text style={ssStyle.textLogo}>Buku Ku</Text>
-                    <Text style={ssStyle.textMoto}>Tempat baca buku tentang {'\n'}Pemrograman</Text>
+                    <Text style={ssStyle.textLogo}>{AppName}</Text>
+                    <Text style={ssStyle.textMoto}>{MottoSS}</Text>
                 </View>
             </View>
         )
@@ -34,7 +35,7 @@ class index extends Component {
             <View style={ssStyle.viewBottom}>
                 <ActivityIndicator animating={true} color={colorWhite} size={50} />
                 <View style={ssStyle.viewVersion}>
-                    <Text style={ssStyle.textVersion}>Versi 1.0</Text>
+                    <Text style={ssStyle.textVersion}>Versi {Versi}</Text>
                 </View>
             </View>
         )
