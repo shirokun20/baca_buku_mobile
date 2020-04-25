@@ -1,4 +1,4 @@
-# Referenced at /home/fikrisuheri/Documents/Pemrograman/React Native/GITHUB/baca_buku_mobile/android/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:15
+# Referenced at /home/kuro/Documents/baca_buku_mobile/android/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:15
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
-# Referenced at /home/fikrisuheri/Documents/Pemrograman/React Native/GITHUB/baca_buku_mobile/android/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:15
+# Referenced at /home/kuro/Documents/baca_buku_mobile/android/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:15
 -keep class com.baca_buku_mobile.MainApplication { <init>(); }
