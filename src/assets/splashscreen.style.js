@@ -3,7 +3,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 import { colorPrimary, colorWhite } from './colors';
 // Dimenstion
 const { height, width } = Dimensions.get('window');
-const heightSisa = (height) - (height/1.2);
+const heightSisa = (height) - (height / 1.2);
 // Style Splash Sreen
 const ssStyle = StyleSheet.create({
     container: {
@@ -13,14 +13,14 @@ const ssStyle = StyleSheet.create({
     },
     viewParentLogo: {
         alignSelf: 'center',
-        height: height/1.3,
+        height: height / 1.3,
         alignItems: 'center',
         justifyContent: 'center'
     },
     viewChildLogo: {
         backgroundColor: colorWhite,
         padding: 10,
-        borderRadius: 150/2,
+        borderRadius: 150 / 2,
         marginBottom: 10,
     },
     textLogo: {
@@ -58,7 +58,7 @@ const ssStyle = StyleSheet.create({
         width: 200,
         opacity: 0.5,
         top: -60,
-        right: -(width/4),    
+        right: -(width / 4),
     },
     layerTwo: {
         position: 'absolute',
@@ -67,8 +67,7 @@ const ssStyle = StyleSheet.create({
         width: 200,
         opacity: 0.5,
         bottom: -60,
-        left: -(width/4),    
-
+        left: -(width / 4),
     }
 });
 
