@@ -13,6 +13,12 @@ import { logo, backgroundSS, layer } from '../../assets/img';
 import { AppName, MottoSS, Versi } from '../../assets/string_value';
 
 class index extends Component {
+    componentDidMount(){
+        setTimeout( () => {
+            this.props.navigation.replace('Login');
+            
+        },3000);
+    }
     render() {
 
         const statusBar = (
@@ -49,8 +55,7 @@ class index extends Component {
                 <Image source={layer} style={ssStyle.layerOne} />
                 <Image source={layer} style={ssStyle.layerTwo} />
             </>
-        )
-
+        )        
         return (
             <View style={ssStyle.container}>
                 {backgroundImage}
