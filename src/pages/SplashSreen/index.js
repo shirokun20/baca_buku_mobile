@@ -14,6 +14,12 @@ import { ssStyle } from '../../assets/splashscreen.style';
 import { logo, backgroundSS, layer } from '../../assets/img';
 
 class index extends Component {
+    componentDidMount(){
+        setTimeout( () => {
+            this.props.navigation.replace('Login');
+            
+        },3000);
+    }
     render() {
 
         const statusBar = (
@@ -50,8 +56,7 @@ class index extends Component {
                 <Image source={layer} style={ssStyle.layerOne} />
                 <Image source={layer} style={ssStyle.layerTwo} />
             </>
-        )
-
+        )        
         return (
             <View style={ssStyle.container}>
                 {backgroundImage}
