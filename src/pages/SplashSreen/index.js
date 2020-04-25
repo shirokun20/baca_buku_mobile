@@ -18,7 +18,7 @@ class index extends Component {
 
         const statusBar = (
             <>
-                <StatusBar barStyle="light-content" backgroundColor={colorStatusBar} />
+                <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
             </>
         )
 
