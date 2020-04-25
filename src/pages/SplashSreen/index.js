@@ -7,7 +7,7 @@ import {
     Image
 } from 'react-native';
 
-import { , colorWhite } from '../../assets/colors';
+import { colorWhite } from '../../assets/colors';
 import { ssStyle } from '../../assets/splashscreen.style';
 import { logo, backgroundSS, layer } from '../../assets/img';
 
