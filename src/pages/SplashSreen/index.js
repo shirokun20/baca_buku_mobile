@@ -24,7 +24,7 @@ class index extends Component {
 
     loginRoute() {
         setTimeout(() => {
-            this.props.navigation.replace('Login');
+            this.props.navigation.replace('Welcome');
         }, 3000);
     }
 

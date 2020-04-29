@@ -1,8 +1,41 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import { Home, SplashScreen, Login } from '../pages';
-
+import { Home, SplashScreen, Login, Welcome, Register, Akun } from '../pages';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { colorPrimary } from '../assets/colors';
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const tabBottom = () => {
+    return (
+        <Tab.Navigator
+        tabBarOptions={{
+            activeTintColor: colorPrimary,
+          }}>
+            <Tab.Screen
+                name="Beranda"
+                component={Home}
+                options={{
+                    tabBarLabel:'Buku',
+                    tabBarIcon: ({color}) => (
+                        <MaterialCommunityIcons name="book" size={25} color={color}/>
+                      )
+                }}
+            />
+            <Tab.Screen
+                name="Akun"
+                component={Akun}
+                options={{
+                    tabBarLabel:'Buku',
+                    tabBarIcon: ({color}) => (
+                        <MaterialCommunityIcons name="account" size={25} color={color}/>
+                      )
+                }}
+            />
+        </Tab.Navigator>
+    )
+}
 
 const Router = () => {
     return (
@@ -11,7 +44,10 @@ const Router = () => {
         >
             <Stack.Screen
                 name="Home"
-                component={Home}
+                component={tabBottom}
+                options={{
+                    headerShown: false
+                }}
             />
             <Stack.Screen
                 name="SplashScreen"
@@ -20,9 +56,23 @@ const Router = () => {
                     headerShown: false
                 }}
             />
-             <Stack.Screen
+            <Stack.Screen
                 name="Login"
                 component={Login}
+                options={{
+                    headerShown: false
+                }}
+            />
+            <Stack.Screen
+                name="Register"
+                component={Register}
+                options={{
+                    headerShown: false
+                }}
+            />
+            <Stack.Screen
+                name="Welcome"
+                component={Welcome}
                 options={{
                     headerShown: false
                 }}
