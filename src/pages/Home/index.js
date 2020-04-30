@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginTop: 10,
-        paddingHorizontal: 10
+        paddingHorizontal: 1
     },
     icContainer: {
         width: 50,
