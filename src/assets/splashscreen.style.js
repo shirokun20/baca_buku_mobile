@@ -7,7 +7,7 @@ const heightSisa = (height) - (height / 1.2);
 // Style Splash Sreen
 const ssStyle = StyleSheet.create({
     container: {
-        height: height,
+        height: '100%',
         width: width,
         backgroundColor: colorPrimary
     },

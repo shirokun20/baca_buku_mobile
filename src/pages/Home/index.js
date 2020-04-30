@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, Image } from 'react-native'
+import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { SearchBar } from 'react-native-elements'
 import { ScrollView } from 'react-native-gesture-handler'
 import { colorPrimary, colorWhite } from '../../assets/colors';
@@ -25,8 +25,8 @@ export default class index extends Component {
                     />
                 </View>
 
-                <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 7, }} >
-                    <View style={{ flex: 1, borderRadius: 4, justifyContent: 'flex-start', backgroundColor: colorPrimary, padding: 20, flexDirection: 'row' }}>
+                <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 7}} >
+                    <View style={{ flex: 1, borderRadius: 4, justifyContent: 'flex-start', backgroundColor: colorPrimary, padding: 20, flexDirection: 'row', marginTop: 5  }}>
                         <View style={{ flex: 2 }}>
                             <Text style={{ color: colorWhite, fontSize: 24, fontWeight: 'bold' }}>Selamat Membaca Buku Pemrograman</Text>
                         </View>
@@ -40,22 +40,22 @@ export default class index extends Component {
                             <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#424242' }}>Berdasarkan Platform</Text>
                         </View>
                         <View style={styles.icWrapper}>
-                            <View>
+                            <TouchableOpacity style={styles.cardCustom}>
                                 <Image source={icDesktop} style={styles.icContainer} />
                                 <Text style={styles.icText}>Desktop</Text>
-                            </View>
-                            <View>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.cardCustom}>
                                 <Image source={icMobile} style={styles.icContainer} />
                                 <Text style={styles.icText}>Mobile</Text>
-                            </View>
-                            <View>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.cardCustom}>
                                 <Image source={icWeb} style={styles.icContainer} />
                                 <Text style={styles.icText}>Web</Text>
-                            </View>
-                            <View>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.cardCustom}>
                                 <Image source={icGames} style={styles.icContainer} />
                                 <Text style={styles.icText}>Game</Text>
-                            </View>
+                            </TouchableOpacity>
                         </View >
                     </View>
                     <View>
@@ -203,10 +203,9 @@ const styles = StyleSheet.create({
     contentBookContainer: {
         width: 85, marginRight: 10
     },
-    textContent:{
-        fontSize:12,
-    }
-    ,
+    textContent: {
+        fontSize: 12,
+    },
     wrapperTitleBook: {
         flexDirection: 'row',
         alignItems: 'flex-end',
@@ -223,5 +222,20 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         resizeMode: 'contain',
     },
-    
+    cardCustom: {
+        padding: 3,
+        width: '23%',
+        alignItems: 'center',
+        borderRadius: 10,
+        backgroundColor: 'white',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+        elevation: 2,
+    }
+
 })
