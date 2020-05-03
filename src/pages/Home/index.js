@@ -15,7 +15,7 @@ export default class index extends Component {
             <View style={styles.wrapper}>
                 <View style={styles.containerSearch}>
                     <SearchBar
-                        placeholder="cari buku pemrograman"
+                        placeholder="Cari buku pemrograman"
                         lightTheme={true}
                         containerStyle={{ backgroundColor: '#fff', borderBottomWidth: 0, borderTopWidth: 0 }}
                         inputContainerStyle={{ backgroundColor: '#e0e0e0' }}

@@ -24,6 +24,16 @@ const tabBottom = () => {
                 }}
             />
             <Tab.Screen
+                name="Favorit"
+                component={Home}
+                options={{
+                    tabBarLabel:'Favorit',
+                    tabBarIcon: ({color}) => (
+                        <MaterialCommunityIcons name="heart" size={25} color={color}/>
+                      )
+                }}
+            />
+            <Tab.Screen
                 name="Akun"
                 component={Akun}
                 options={{
