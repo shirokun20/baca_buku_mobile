@@ -1,13 +1,4 @@
-#Fri May 01 01:51:46 WIB 2020
-path.3=classes2.dex
-path.2=classes.dex
-path.1=classes2.dex
-path.0=classes.dex
-base.3=/home/kuro/Documents/baca_buku_mobile/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes2.dex
-base.2=/home/kuro/Documents/baca_buku_mobile/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
-base.1=/home/fikrisuheri/Documents/Pemrograman/React Native/GITHUB/baca_buku_mobile/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes2.dex
+#Mon May 04 10:29:05 WIB 2020
 base.0=/home/fikrisuheri/Documents/Pemrograman/React Native/GITHUB/baca_buku_mobile/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
-renamed.3=classes4.dex
-renamed.2=classes3.dex
-renamed.1=classes2.dex
 renamed.0=classes.dex
+path.0=classes.dex

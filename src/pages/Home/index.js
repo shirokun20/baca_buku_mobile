@@ -5,9 +5,17 @@ import { ScrollView } from 'react-native-gesture-handler'
 import { colorPrimary, colorWhite } from '../../assets/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { icReadingBook, icDesktop, icMobile, icWeb, icGames, imgBook1, imgBook2, imgBook3 } from '../../assets/img';
+import SkeletonContent from "react-native-skeleton-content-nonexpo";
 export default class index extends Component {
     state = {
         search: '',
+        isLoading: true
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({ isLoading: false })
+        }, 4000);
     }
 
     render() {
@@ -25,8 +33,8 @@ export default class index extends Component {
                     />
                 </View>
 
-                <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 7}} >
-                    <View style={{ flex: 1, borderRadius: 4, justifyContent: 'flex-start', backgroundColor: colorPrimary, padding: 20, flexDirection: 'row', marginTop: 5  }}>
+                <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 7 }} >
+                    <View style={{ flex: 1, borderRadius: 4, justifyContent: 'flex-start', backgroundColor: colorPrimary, padding: 20, flexDirection: 'row', marginTop: 5 }}>
                         <View style={{ flex: 2 }}>
                             <Text style={{ color: colorWhite, fontSize: 24, fontWeight: 'bold' }}>Selamat Membaca Buku Pemrograman</Text>
                         </View>
@@ -41,20 +49,56 @@ export default class index extends Component {
                         </View>
                         <View style={styles.icWrapper}>
                             <TouchableOpacity style={styles.cardCustom}>
-                                <Image source={icDesktop} style={styles.icContainer} />
-                                <Text style={styles.icText}>Desktop</Text>
+                                <SkeletonContent
+                                    containerStyle={{ flex: 1 }}
+                                    isLoading={this.state.isLoading}
+                                    duration='1000'
+                                    layout={[
+                                        { key: 'someid', width: 50, height: 50 }
+                                    ]}
+                                >
+                                    <Image source={icDesktop} style={styles.icContainer} />
+                                    <Text style={styles.icText}>Desktop</Text>
+                                </SkeletonContent>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.cardCustom}>
-                                <Image source={icMobile} style={styles.icContainer} />
-                                <Text style={styles.icText}>Mobile</Text>
+                                <SkeletonContent
+                                    containerStyle={{ flex: 1 }}
+                                    isLoading={this.state.isLoading}
+                                    duration='1000'
+                                    layout={[
+                                        { key: 'someid', width: 50, height: 50 }
+                                    ]}
+                                >
+                                    <Image source={icMobile} style={styles.icContainer} />
+                                    <Text style={styles.icText}>Mobile</Text>
+                                </SkeletonContent>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.cardCustom}>
-                                <Image source={icWeb} style={styles.icContainer} />
-                                <Text style={styles.icText}>Web</Text>
+                                <SkeletonContent
+                                    containerStyle={{ flex: 1 }}
+                                    isLoading={this.state.isLoading}
+                                    duration='1000'
+                                    layout={[
+                                        { key: 'someid', width: 50, height: 50 }
+                                    ]}
+                                >
+                                    <Image source={icWeb} style={styles.icContainer} />
+                                    <Text style={styles.icText}>Web</Text>
+                                </SkeletonContent>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.cardCustom}>
-                                <Image source={icGames} style={styles.icContainer} />
-                                <Text style={styles.icText}>Game</Text>
+                                <SkeletonContent
+                                    containerStyle={{ flex: 1 }}
+                                    isLoading={this.state.isLoading}
+                                    duration='1000'
+                                    layout={[
+                                        { key: 'someid', width: 50, height: 50 }
+                                    ]}
+                                >
+                                    <Image source={icGames} style={styles.icContainer} />
+                                    <Text style={styles.icText}>Game</Text>
+                                </SkeletonContent>
                             </TouchableOpacity>
                         </View >
                     </View>
@@ -65,34 +109,90 @@ export default class index extends Component {
                             <Icon name='arrow-forward' size={20} />
                         </View>
                         <ScrollView horizontal={true} style={styles.imgWrapper}>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook1} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Algoritma Pemdas</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook2} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Bahasa C# Pemula</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook3} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Mysql Untuk Pemula</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook1} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Algoritma Pemdas</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook2} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Bahasa C# Pemula</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook3} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Mysql Untuk Pemula</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook1} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Algoritma Pemdas</Text>
-                            </View>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook1} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Algoritma Pemdas</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook2} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Bahasa C# Pemula</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook3} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Mysql Untuk Pemula</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook1} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Algoritma Pemdas</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook2} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Bahasa C# Pemula</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook3} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Mysql Untuk Pemula</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook1} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Algoritma Pemdas</Text>
+                                </View>
+                            </SkeletonContent>
                         </ScrollView>
                     </View>
                     <View>
@@ -102,34 +202,90 @@ export default class index extends Component {
                             <Icon name='arrow-forward' size={20} />
                         </View>
                         <ScrollView horizontal={true} style={styles.imgWrapper}>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook1} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Algoritma Pemdas</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook2} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Bahasa C# Pemula</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook3} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Mysql Untuk Pemula</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook1} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Algoritma Pemdas</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook2} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Bahasa C# Pemula</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook3} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Mysql Untuk Pemula</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook1} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Algoritma Pemdas</Text>
-                            </View>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook1} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Algoritma Pemdas</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook2} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Bahasa C# Pemula</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook3} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Mysql Untuk Pemula</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook1} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Algoritma Pemdas</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook2} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Bahasa C# Pemula</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook3} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Mysql Untuk Pemula</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook1} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Algoritma Pemdas</Text>
+                                </View>
+                            </SkeletonContent>
                         </ScrollView>
                     </View>
                     <View>
@@ -139,34 +295,90 @@ export default class index extends Component {
                             <Icon name='arrow-forward' size={20} />
                         </View>
                         <ScrollView horizontal={true} style={styles.imgWrapper}>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook1} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Algoritma Pemdas</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook2} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Bahasa C# Pemula</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook3} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Mysql Untuk Pemula</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook1} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Algoritma Pemdas</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook2} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Bahasa C# Pemula</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook3} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Mysql Untuk Pemula</Text>
-                            </View>
-                            <View style={styles.contentBookContainer}>
-                                <Image source={imgBook1} style={styles.imgContainer} />
-                                <Text style={styles.textContent}>Algoritma Pemdas</Text>
-                            </View>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook1} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Algoritma Pemdas</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook2} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Bahasa C# Pemula</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook3} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Mysql Untuk Pemula</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook1} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Algoritma Pemdas</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook2} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Bahasa C# Pemula</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook3} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Mysql Untuk Pemula</Text>
+                                </View>
+                            </SkeletonContent>
+                            <SkeletonContent
+                            containerStyle={{flex:1}}
+                            isLoading={this.state.isLoading}
+                            layout={[
+                                {key:'someid',width:85,height:125,marginRight:10}
+                            ]}
+                            >
+                                <View style={styles.contentBookContainer}>
+                                    <Image source={imgBook1} style={styles.imgContainer} />
+                                    <Text style={styles.textContent}>Algoritma Pemdas</Text>
+                                </View>
+                            </SkeletonContent>
                         </ScrollView>
                     </View>
                 </ScrollView>
