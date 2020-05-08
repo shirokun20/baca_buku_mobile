@@ -1,6 +1,6 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import { Home, SplashScreen, Login, Welcome, Register, Akun } from '../pages';
+import { Home, SplashScreen, Login, Welcome, Register, Akun, Favorite } from '../pages';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { colorPrimary } from '../assets/colors';
@@ -25,7 +25,7 @@ const tabBottom = () => {
             />
             <Tab.Screen
                 name="Favorit"
-                component={Home}
+                component={Favorite}
                 options={{
                     tabBarLabel:'Favorit',
                     tabBarIcon: ({color}) => (
