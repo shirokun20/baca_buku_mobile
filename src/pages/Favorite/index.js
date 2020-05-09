@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { colorWhite, colorPrimary } from '../../assets/colors';
 import { SearchBar, Rating, Icon } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 import { imgBook1, imgBook2, imgBook3 } from '../../assets/img';
+const { height, width } = Dimensions.get('window');
 export class index extends Component {
     render() {
         return (
@@ -34,7 +35,9 @@ export class index extends Component {
                                     width: '80%',
                                     alignItems: 'flex-start'
                                 }}>
-                                    <Text>Buku Khusus Algoritma</Text>
+                                    <Text style={{
+                                        color: colorPrimary
+                                    }}>Buku Khusus Algoritma</Text>
                                     <Rating
                                         readonly
                                         startingValue={5}
@@ -53,12 +56,12 @@ export class index extends Component {
                                             <Icon
                                                 type="font-awesome"
                                                 name="trash"
-                                                color="grey"
+                                                color="red"
                                             />
                                         </TouchableOpacity>
                                         <TouchableOpacity style={style.detailButton}>
                                             <Text style={{
-                                                color: 'grey'
+                                                color: colorPrimary
                                             }}>Detail Buku</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -107,8 +110,8 @@ const style = StyleSheet.create({
         elevation: 3,
     },
     imgCard: {
-        width: 75,
-        height: 108,
+        width: width/5.5,
+        height: height/6.2,
         borderRadius: 10,
         resizeMode: 'contain',
     },
