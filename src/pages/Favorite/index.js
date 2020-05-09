@@ -27,7 +27,8 @@ export class index extends Component {
                         <View style={style.vCard}>
                             {/* Isi Konten */}
                             <View style={{
-                                flexDirection: 'row'
+                                flexDirection: 'row',
+                                alignItems: 'center'
                             }}>
                                 <Image source={imgBook1} style={style.imgCard} />
                                 <View style={{
@@ -54,6 +55,7 @@ export class index extends Component {
                                     }}>
                                         <TouchableOpacity style={style.buttonDelete}>
                                             <Icon
+                                                size={20}
                                                 type="font-awesome"
                                                 name="trash"
                                                 color="red"
@@ -110,15 +112,15 @@ const style = StyleSheet.create({
         elevation: 3,
     },
     imgCard: {
-        width: width/5.5,
-        height: height/6.2,
+        width: '18%',
+        height: '100%',
         borderRadius: 10,
         resizeMode: 'contain',
     },
     buttonDelete: {
         backgroundColor: colorWhite,
         elevation: 2,
-        padding: 10,
+        padding: 8,
         borderRadius: 5,
         marginRight: 10,
         justifyContent: 'center',
@@ -128,7 +130,7 @@ const style = StyleSheet.create({
         width: '88%',
         backgroundColor: colorWhite,
         elevation: 2,
-        padding: 10,
+        padding: 8,
         borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center'
