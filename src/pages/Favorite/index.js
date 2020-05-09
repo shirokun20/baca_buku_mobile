@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Text, View, StyleSheet, Image } from 'react-native'
-import { colorWhite, colorPrimary } from '../../assets/colors'
-import { SearchBar } from 'react-native-elements'
-import { ScrollView } from 'react-native-gesture-handler'
+import React, { Component } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { colorWhite, colorPrimary } from '../../assets/colors';
+import { SearchBar, Rating, Icon } from 'react-native-elements';
+import { ScrollView } from 'react-native-gesture-handler';
 import { imgBook1, imgBook2, imgBook3 } from '../../assets/img';
 export class index extends Component {
     render() {
@@ -22,8 +22,48 @@ export class index extends Component {
                 </View>
                 <ScrollView>
                     <View style={style.vContent}>
+                        {/* Card Content */}
                         <View style={style.vCard}>
-                            <Image source={imgBook1} style={style.imgCard} />
+                            {/* Isi Konten */}
+                            <View style={{
+                                flexDirection: 'row'
+                            }}>
+                                <Image source={imgBook1} style={style.imgCard} />
+                                <View style={{
+                                    marginLeft: 10,
+                                    width: '80%',
+                                    alignItems: 'flex-start'
+                                }}>
+                                    <Text>Buku Khusus Algoritma</Text>
+                                    <Rating
+                                        readonly
+                                        startingValue={5}
+                                        ratingCount={5}
+                                        imageSize={20}
+                                    />
+                                    <Text style={{
+                                        color: 'grey'
+                                    }}>Dibaca: 100k</Text>
+                                    <View style={{
+                                        width: '90%',
+                                        flexDirection: 'row',
+                                        marginTop: 3,
+                                    }}>
+                                        <TouchableOpacity style={style.buttonDelete}>
+                                            <Icon
+                                                type="font-awesome"
+                                                name="trash"
+                                                color="grey"
+                                            />
+                                        </TouchableOpacity>
+                                        <TouchableOpacity style={style.detailButton}>
+                                            <Text style={{
+                                                color: 'grey'
+                                            }}>Detail Buku</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </View>
                         </View>
                     </View>
                 </ScrollView>
@@ -48,12 +88,6 @@ const style = StyleSheet.create({
         backgroundColor: colorWhite,
         shadowColor: '#000',
         padding: 2,
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.22,
-        shadowRadius: 2.22,
         elevation: 3,
     },
     vContent: {
@@ -67,23 +101,34 @@ const style = StyleSheet.create({
         width: '97%',
         backgroundColor: colorWhite,
         borderRadius: 10,
-        padding: 10,
+        padding: 7,
         // height: 100,
-        marginTop: 10,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.22,
-        shadowRadius: 2.22,
+        marginTop: 5,
         elevation: 3,
     },
     imgCard: {
-        width: 85,
-        height: 125,
-        borderRadius: 5,
+        width: 75,
+        height: 108,
+        borderRadius: 10,
         resizeMode: 'contain',
+    },
+    buttonDelete: {
+        backgroundColor: colorWhite,
+        elevation: 2,
+        padding: 10,
+        borderRadius: 5,
+        marginRight: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    detailButton: {
+        width: '88%',
+        backgroundColor: colorWhite,
+        elevation: 2,
+        padding: 10,
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 })
 
