@@ -109,6 +109,7 @@ const style = StyleSheet.create({
         padding: 7,
         // height: 100,
         marginTop: 5,
+        marginBottom: 5,
         elevation: 3,
     },
     imgCard: {
